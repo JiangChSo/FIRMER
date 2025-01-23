@@ -1,15 +1,67 @@
-# FIRMER Implementation
-This is a sample implementation of the FIRMER construction, which is written in Go. This is an academic prototype not intended for production use.
+# <font style="color:rgb(31, 35, 40);">FIRMER Implementation</font>
+<font style="color:rgb(31, 35, 40);">This is a sample implementation of the FIRMER construction, which is written in Go. </font>
+
+<font style="color:rgb(31, 35, 40);">This is an academic prototype not intended for production use.</font>
+
+<font style="color:rgb(31, 35, 40);">  
+</font>
 
 ## Outline
++ package **merkle** implements and tests RZKS (rotatable zero knowledge set) and FIRMER.
++ merkle/**RZKS.go** implements the algorithms of RZKS (GenPP, Init, Update, PCSUpdate, Query, Verify, and VerifyUpd) based on open-source codes in github.com/zoom/elektra/tree/main/merkle and github.com/zoom/elektra/tree/main/vrf.
++ merkle/**RZKS_test.go** tests the algorithms of RZKS via functions TestGenPP, TestInit, TestUpdate, TestPCSUpdate, TestQuery, TestVerify, and TestVerifyUpd.
++ merkle/**firmer_test.go** implements and tests the algorithms of FIRMER via the functions TestRegKeyGen, TestDeviceKeyGen, TestSesKeyGen, TestKeyUpdate, TestDirUpdate, TestDirUpdatePCS, TestAudit, TestMonitor and TestPubKeyReq, using RZKS.go and package bn256.
++ merkle/**firmer_test.go** also runs comparison experiments via functions TestComparisonComputationCosts and TestComparisonStorageCosts.
 
-1. **RZKS.go** implements RZKS (rotatable zero knowledge set) using the packages github.com/zoom/elektra/tree/main/merkle and github.com/zoom/elektra/tree/main/vrf
-2. **RZKS_test.go** tests the algorithms in RZKS, including GenPP, Init, Update, PCSUpdate, VerifyUpd, Query, and Verify.
-3. **firmer_test.go** tests the algorithms in the FIRMER construction, which is implemented based on RZKS.go and package bn256. The algorithms include RegKeyGen, DirUpdate, DirUpdatePCS, Audit, Monitor, DeviceKeyGen, PubKeyReq, SesKeyGen, and KeyUpdate.
-4. **firmer_test.go** also includes comparison experiments, such as TestComparisonComputationCosts and TestComparisonStorageCosts.
 
----
 
-## Running Experiments
-1. Download required packages such as github.com/cloudflare/bn256.
-2. Run each testing function in firmer_test.go, such as TestDirUpdate, TestAudit, and TestMonitor. 
+Note: example commands in this README must be executed from the folder containing this file.
+
+## 
+## Running experiments
+Test in a **Windows** environment：
+
+
+
+Enter the project  FIRMER directory：
+
+```plain
+cd .\FIRMER\
+```
+
+
+
+Check if there are **RZKS_test.go** and **firmer_test.go** in the merkle package：
+
+```plain
+dir .\merkle 
+```
+
+
+
+Before running, make sure the project dependencies are in place and execute:
+
+```plain
+go mod tidy
+```
+
+
+
+Run the test function in the merkle package
+
+```plain
+go test -v -run FunctionName ./merkle
+```
+
+**FunctionName** can be any test function in the merkle package.
+
+For example:
+
+```plain
+go test -v -run TestComparisonComputationCosts ./merkle
+go test -v -run TestComparisonStorageCosts ./merkle
+```
+
+
+
+
