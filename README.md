@@ -10,7 +10,7 @@
 + package **merkle** implements and tests RZKS (rotatable zero knowledge set) and FIRMER.
 + merkle/**RZKS.go** implements the algorithms of RZKS (GenPP, Init, Update, PCSUpdate, Query, Verify, and VerifyUpd) based on open-source codes in github.com/zoom/elektra/tree/main/merkle and github.com/zoom/elektra/tree/main/vrf.
 + merkle/**RZKS_test.go** tests the algorithms of RZKS via functions TestGenPP, TestInit, TestUpdate, TestPCSUpdate, TestQuery, TestVerify, and TestVerifyUpd.
-+ merkle/**firmer_test.go** implements and tests the algorithms of FIRMER via the functions TestRegKeyGen, TestDeviceKeyGen, TestSesKeyGen, TestKeyUpdate, TestDirUpdate, TestDirUpdatePCS, TestAudit, TestMonitor and TestPubKeyReq, using RZKS.go and package bn256.
++ merkle/**firmer_test.go** implements and tests the algorithms of FIRMER via the functions TestRegKeyGen, TestDeviceKeyGen, TestSesKeyGen, TestKeyUpdate, TestDirUpdate, TestDirUpdatePCS, TestAudit, TestMonitor and TestPubKeyReq.
 + merkle/**firmer_test.go** also runs comparison experiments via functions TestComparisonComputationCosts and TestComparisonStorageCosts.
 
 
