@@ -791,21 +791,18 @@ func TestMonitor(t *testing.T) {
 	AverageCost(10, 2, 3, 100)
 	AverageCost(10, 2, 3, 1000)
 	AverageCost(10, 2, 3, 10000)
-	//AverageCost(10, 2, 3, 100000)
 
 	//(2) Insert 4 key-value pairs into Tree_o and 5 key-value pairs into Tree_a, Tree_a already have 10, 100, 1k and 10k key-value pairs, respectively
 	AverageCost(10, 4, 5, 10)
 	AverageCost(10, 4, 5, 100)
 	AverageCost(10, 4, 5, 1000)
 	AverageCost(10, 4, 5, 10000)
-	//AverageCost(10, 4, 5, 100000)
 
 	//(3) Insert 6 key-value pairs into Tree_o and 7 key-value pairs into Tree_a, Tree_a already have 10, 100, 1k and 10k key-value pairs, respectively
 	AverageCost(10, 6, 7, 10)
 	AverageCost(10, 6, 7, 100)
 	AverageCost(10, 6, 7, 1000)
 	AverageCost(10, 6, 7, 10000)
-	//AverageCost(10, 6, 7, 100000)
 }
 
 func GenerateAddS_Alice(n int) (kvps []KeyValuePair) {
