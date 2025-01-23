@@ -11,5 +11,5 @@ This is a sample implementation of the FIRMER construction, which is written in 
 ---
 
 ## Running Experiments
-1. download required packages such as github.com/cloudflare/bn256.
+1. Download required packages such as github.com/cloudflare/bn256.
 2. Run each testing function in firmer_test.go, such as TestDirUpdate, TestAudit, and TestMonitor. 
